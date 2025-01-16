@@ -33,8 +33,10 @@ public class ParsedDataService {
         return parsedDataRepository.save(updatedParsedData);
     }
 
-    public void deleteParsedData(ParsedData parsedData){
-        parsedDataRepository.delete(parsedData);
+    public ParsedData deleteParsedData(Long id){
+        ParsedData deletedData = parsedDataRepository.findById(id).get();
+        parsedDataRepository.delete(deletedData);
+        return deletedData;
     }
 
     public ParsedData findParsedDataById(Long id){
