@@ -3,7 +3,6 @@ package ru.chariot.faceitparser.controller;
 import org.springframework.web.bind.annotation.*;
 import ru.chariot.faceitparser.model.User;
 import ru.chariot.faceitparser.service.UserService;
-
 import java.util.List;
 
 @RestController
