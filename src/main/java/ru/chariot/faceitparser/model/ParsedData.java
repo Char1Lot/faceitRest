@@ -15,9 +15,9 @@ public class ParsedData {
     @JoinColumn(name = "user_id")
     private User user;
 
-    private Date date;
+    private String date;
 
-    private Time time;
+    private String time;
 
     private String type;
 
@@ -27,7 +27,7 @@ public class ParsedData {
 
     private String map;
 
-    public ParsedData(User user, Date date, Time time, String type, Boolean result, String score, String map) {
+    public ParsedData(User user, String date, String time, String type, Boolean result, String score, String map) {
         this.user = user;
         this.date = date;
         this.time = time;
@@ -63,11 +63,11 @@ public class ParsedData {
         return user;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public Time getTime() {
+    public String  getTime() {
         return time;
     }
 
@@ -91,11 +91,11 @@ public class ParsedData {
         this.user = user;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
-    public void setTime(Time time) {
+    public void setTime(String time) {
         this.time = time;
     }
 
