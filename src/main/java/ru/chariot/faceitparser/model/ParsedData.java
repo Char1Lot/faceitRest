@@ -13,7 +13,7 @@ public class ParsedData {
 
     @ManyToOne
     @JoinColumn(name = "user_id")
-    private User user;
+    private String userName;
 
     private String date;
 
@@ -27,8 +27,8 @@ public class ParsedData {
 
     private String map;
 
-    public ParsedData(User user, String date, String time, String type, Boolean result, String score, String map) {
-        this.user = user;
+    public ParsedData(String userName, String date, String time, String type, Boolean result, String score, String map) {
+        this.userName = userName;
         this.date = date;
         this.time = time;
         this.type = type;
@@ -45,7 +45,7 @@ public class ParsedData {
 
         return "{" +
                 "\ngame : " + id +
-                "\nuser : " + user +
+                "\nuser : " + userName +
                 "\ndate : " + date +
                 "\ntime : " + time +
                 "\ntype : " + type +
@@ -59,8 +59,8 @@ public class ParsedData {
         return id;
     }
 
-    public User getUser() {
-        return user;
+    public String getUser() {
+        return userName;
     }
 
     public String getDate() {
@@ -87,8 +87,8 @@ public class ParsedData {
         return map;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUser(String  user) {
+        this.userName = user;
     }
 
     public void setDate(String date) {

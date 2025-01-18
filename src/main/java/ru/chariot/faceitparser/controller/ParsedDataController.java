@@ -2,7 +2,6 @@ package ru.chariot.faceitparser.controller;
 
 import org.springframework.web.bind.annotation.*;
 import ru.chariot.faceitparser.model.ParsedData;
-import ru.chariot.faceitparser.model.User;
 import ru.chariot.faceitparser.service.ParsedDataService;
 import java.util.List;
 
@@ -40,9 +39,9 @@ public class ParsedDataController {
         return parsedDataService.findParsedDataById(id);
     }
 
-    @GetMapping
-    public List<ParsedData> findDataByUser(@RequestBody User user){
-        return parsedDataService.findByUser(user);
+    @GetMapping("/{username}")
+    public List<ParsedData> findDataByUser(@PathVariable String userName){
+        return parsedDataService.findByUser(userName);
     }
 
     @GetMapping("/{map}")

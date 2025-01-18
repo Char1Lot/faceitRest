@@ -2,7 +2,6 @@ package ru.chariot.faceitparser.service;
 
 import org.springframework.stereotype.Service;
 import ru.chariot.faceitparser.model.ParsedData;
-import ru.chariot.faceitparser.model.User;
 import ru.chariot.faceitparser.repository.ParsedDataRepository;
 
 import java.util.List;
@@ -47,8 +46,8 @@ public class ParsedDataService {
         return parsedDataRepository.findAll();
     }
 
-    public List<ParsedData> findByUser(User user) {
-        return parsedDataRepository.findByUser(user);
+    public List<ParsedData> findByUser(String userName) {
+        return parsedDataRepository.findByUserName(userName);
     }
 
     public List<ParsedData> findByMap(String map){
