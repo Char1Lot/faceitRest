@@ -1,5 +1,6 @@
 package ru.chariot.faceitparser.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import java.sql.Date;
 import java.sql.Time;
@@ -11,21 +12,32 @@ public class ParsedData {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "user_name")
+    @JsonProperty("userName")
     private String userName;
 
+    @JsonProperty("date")
     private String date;
 
+    @JsonProperty("time")
     private String time;
 
+    @Column(name = "game_type")
+    @JsonProperty("type")
     private String type;
 
-    private Boolean result;
+    @Column(name = "game_result")
+    @JsonProperty("result")
+    private String result;
 
+    @JsonProperty("score")
     private String score;
 
+    @Column(name = "game_map")
+    @JsonProperty("map")
     private String map;
 
-    public ParsedData(String userName, String date, String time, String type, Boolean result, String score, String map) {
+    public ParsedData(String userName, String date, String time, String type, String result, String score, String map) {
         this.userName = userName;
         this.date = date;
         this.time = time;
@@ -39,7 +51,6 @@ public class ParsedData {
 
     @Override
     public String toString() {
-        String s = result ? "win" : "lose";
 
         return "{" +
                 "\ngame : " + id +
@@ -47,7 +58,7 @@ public class ParsedData {
                 "\ndate : " + date +
                 "\ntime : " + time +
                 "\ntype : " + type +
-                "\nresult" + s +
+                "\nresult : " + result +
                 "\nscore : " + score +
                 "\nmap : " + map +
                 "\n}";
@@ -73,7 +84,7 @@ public class ParsedData {
         return type;
     }
 
-    public Boolean getResult() {
+    public String getResult() {
         return result;
     }
 
@@ -101,7 +112,7 @@ public class ParsedData {
         this.type = type;
     }
 
-    public void setResult(Boolean result) {
+    public void setResult(String result) {
         this.result = result;
     }
 
