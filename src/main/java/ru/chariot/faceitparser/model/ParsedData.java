@@ -2,8 +2,6 @@ package ru.chariot.faceitparser.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
-import java.sql.Date;
-import java.sql.Time;
 
 @Entity
 @Table(name = "parsed_data")
@@ -51,7 +49,6 @@ public class ParsedData {
 
     @Override
     public String toString() {
-
         return "{" +
                 "\ngame : " + id +
                 "\nuser : " + userName +
