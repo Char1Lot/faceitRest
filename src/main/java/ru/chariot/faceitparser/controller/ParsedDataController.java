@@ -34,17 +34,17 @@ public class ParsedDataController {
         return parsedDataService.findAll();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/byid/{id}")
     public ParsedData getDataById(@PathVariable("id") Long id){
         return parsedDataService.findParsedDataById(id);
     }
 
-    @GetMapping("/{username}")
-    public List<ParsedData> findDataByUser(@PathVariable String userName){
-        return parsedDataService.findByUser(userName);
+    @GetMapping("/byuser/{username}")
+    public List<ParsedData> findDataByUser(@PathVariable String username){
+        return parsedDataService.findByUser(username);
     }
 
-    @GetMapping("/{map}")
+    @GetMapping("/bymap/{map}")
     public List<ParsedData> findDataByMap(@PathVariable("map") String map){
         return parsedDataService.findByMap(map);
     }
