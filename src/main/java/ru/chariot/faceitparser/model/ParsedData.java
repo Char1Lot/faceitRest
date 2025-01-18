@@ -11,8 +11,6 @@ public class ParsedData {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id")
     private String userName;
 
     private String date;
